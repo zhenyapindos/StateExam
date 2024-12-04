@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Визначений Інтеграл</title>
+  <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
+  <script src="integral-logic.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    #info-panel {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    #info-panel button {
+      margin-top: 10px;
+      padding: 5px 15px;
+      font-size: 16px;
+      border: none;
+      background: #4caf50;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="info-panel">
+    <h2>Вивчення визначеного інтеграла</h2>
+    <p>Інтерактивне середовище для вивчення інтегралів. Оберіть межі інтегрування та перегляньте візуалізацію області.</p>
+    <button id="start-button">Розпочати навчання</button>
+  </div>
+  
+  <a-scene>
+    <!-- Основа сцени -->
+    <a-plane position="0 0 -5" rotation="-90 0 0" width="10" height="10" color="#ccc"></a-plane>
+    
+    <!-- Криві графіка -->
+    <a-entity id="graph-container"></a-entity>
+    
+    <!-- Візуалізація інтегралу -->
+    <a-entity id="integral-area"></a-entity>
+    
+    <!-- Камера -->
+    <a-entity camera position="0 1.6 2" look-controls></a-entity>
+  </a-scene>
+</body>
+</html>
